@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Alishba, on Friendship Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <canvas id="confetti-canvas"></canvas>
+  <div id="ambient"></div>
+
+  <svg class="corner-flourish tl" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6 6 C 30 20, 20 55, 45 60 C 65 64, 70 40, 55 30" stroke="currentColor" stroke-width="1.6"
+      stroke-linecap="round" />
+    <circle cx="45" cy="60" r="4" stroke="currentColor" stroke-width="1.4" />
+    <circle cx="33" cy="66" r="3" stroke="currentColor" stroke-width="1.2" />
+    <circle cx="52" cy="72" r="2.4" stroke="currentColor" stroke-width="1.2" />
+  </svg>
+  <svg class="corner-flourish br" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6 6 C 30 20, 20 55, 45 60 C 65 64, 70 40, 55 30" stroke="currentColor" stroke-width="1.6"
+      stroke-linecap="round" />
+    <circle cx="45" cy="60" r="4" stroke="currentColor" stroke-width="1.4" />
+    <circle cx="33" cy="66" r="3" stroke="currentColor" stroke-width="1.2" />
+    <circle cx="52" cy="72" r="2.4" stroke="currentColor" stroke-width="1.2" />
+  </svg>
+
+  <!-- ============ SCENE 1: ENVELOPE ============ -->
+  <div class="scene" id="scene-envelope">
+    <div class="envelope-wrap">
+      <p class="envelope-title">a little something<br>for you</p>
+      <div class="envelope" id="envelope">
+        <div class="env-letter-peek"></div>
+        <div class="env-back"></div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+        <div class="wax-seal">A♥N</div>
+      </div>
+      <div class="envelope-hint"><span class="chevron-up"></span>swipe up to open</div>
+    </div>
+  </div>
+
+  <!-- ============ SCENE 2: LETTER ============ -->
+  <div class="scene hidden" id="scene-letter">
+    <div class="letter-paper">
+      <p class="letter-greeting">Dear Alishba,</p>
+      <div class="letter-body">
+        <p>Four years ago, if someone told me a cup would become one of the things I treasure most, I don't think I'd
+          have believed them. But that's exactly what happened the day you gave me one — it still sits exactly where I
+          keep the things I never want to lose.</p>
+        <p>We started out as classmates, trading notes and stealing minutes to laugh at things nobody else found funny.
+          Somewhere between then and now, "classmate" quietly turned into "constant" — the person I call when
+          something's funny, when something's hard, or when nothing is happening at all and I just want to talk to you
+          anyway.</p>
+        <p>This little something is for you — for every joke, every year, and every ordinary day that turned out to be
+          one I'll remember.</p>
+      </div>
+      <p class="letter-sign">— Nehal</p>
+      <p class="letter-cta">click anywhere to begin</p>
+    </div>
+  </div>
+
+  <!-- ============ SCENE 3: LOADING ============ -->
+  <div class="scene hidden" id="scene-loading">
+    <div class="loading-icon">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+    </div>
+    <p class="loading-text">delivery is coming soon...</p>
+  </div>
+
+  <!-- ============ SCROLLABLE STORY ============ -->
+  <div id="story">
+
+    <section class="panel" id="s-heading">
+      <div class="reveal">
+        <p class="eyebrow">Friendship Day</p>
+        <h1 class="big-heading">Happy Friendship Day</h1>
+        <p class="friend-name">Alishba</p>
+        <p class="sub-heading">to the best one, always.</p>
+      </div>
+      <div class="scroll-hint reveal"><span>keep scrolling</span><span class="chevron-down"></span></div>
+    </section>
+
+    <section class="panel" id="s-photo">
+      <div class="reveal">
+        <div class="photo-frame">
+          <div class="washi w1"></div>
+          <div class="washi w2"></div>
+          <img id="friend-photo" src="https://i.pinimg.com/736x/a5/b8/bc/a5b8bcdf289f285003dd99a671994930.jpg" alt="Alishba and Nehal">
+          <p class="photo-caption">you &amp; me</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="s-story">
+      <div class="reveal story-text">
+        <p>Four years. That's roughly <strong>1,460 days</strong> of inside jokes, mid-class whispers, and being the
+          reason the other one got in trouble for laughing too loud. We didn't plan this friendship — we just kept
+          showing up for each other, one ordinary day at a time, until the ordinary days quietly became four years of
+          something extraordinary. You've never once been far, even when life got busy — always just a message, a laugh,
+          or a cup of tea away.</p>
+      </div>
+    </section>
+
+    <section class="panel" id="s-cards">
+      <p class="cards-heading reveal">Three little things</p>
+      <div class="cards-grid">
+        <div class="info-card reveal">
+          <svg class="icon" viewBox="0 0 48 48" fill="none">
+            <path d="M10 16h20v14a10 10 0 0 1-10 10 10 10 0 0 1-10-10V16Z" stroke="currentColor" stroke-width="1.8" />
+            <path d="M30 19h4a5 5 0 0 1 0 10h-4" stroke="currentColor" stroke-width="1.8" />
+            <path d="M15 10c1-2 4-2 5 0M22 10c1-2 4-2 5 0" stroke="currentColor" stroke-width="1.6"
+              stroke-linecap="round" />
+          </svg>
+          <h3>The Cup</h3>
+          <p>The gift you gave me four years ago still sits on my shelf — not because it's fancy, but because it's
+            yours. Some things you just don't let go of.</p>
+        </div>
+        <div class="info-card reveal">
+          <svg class="icon" viewBox="0 0 48 48" fill="none">
+            <path d="M6 12h14v26H6zM28 12h14v26H28z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <path d="M20 14c2 1 6 1 8 0" stroke="currentColor" stroke-width="1.6" />
+          </svg>
+          <h3>The Classroom</h3>
+          <p>We were classmates first — trading notes and sharing jokes only we understood. That's exactly where all of
+            this began.</p>
+        </div>
+        <div class="info-card reveal">
+          <svg class="icon" viewBox="0 0 48 48" fill="none">
+            <path d="M24 38S8 28 8 17a8 8 0 0 1 16-2 8 8 0 0 1 16 2c0 11-16 21-16 21Z" stroke="currentColor"
+              stroke-width="1.8" stroke-linejoin="round" />
+          </svg>
+          <h3>The Constant</h3>
+          <p>Four years, zero distance. Through everything, you've been the one constant I never had to question.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="s-song">
+      <div class="song-box reveal">
+        <p class="song-title">a little tune for you</p>
+        <p class="song-sub">press play</p>
+        <button class="play-btn" id="playBtn" aria-label="Play song">
+          <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+            <rect x="6" y="5" width="4" height="14" />
+            <rect x="14" y="5" width="4" height="14" />
+          </svg>
+        </button>
+        <div class="eq-bars" id="eqBars"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="panel" id="s-flip">
+      <p class="cards-heading reveal">flip the card to read</p>
+      <div class="flip-grid">
+        <div class="flip-card reveal" data-card>
+          <div class="flip-inner">
+            <div class="flip-front"><svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6a5.4 5.4 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9Z"
+                  stroke="currentColor" stroke-width="1.6" />
+              </svg><span>tap to flip</span></div>
+            <div class="flip-back">
+              <p>Because you make ordinary days feel like inside jokes waiting to happen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card reveal" data-card>
+          <div class="flip-inner">
+            <div class="flip-front"><svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6a5.4 5.4 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9Z"
+                  stroke="currentColor" stroke-width="1.6" />
+              </svg><span>tap to flip</span></div>
+            <div class="flip-back">
+              <p>Because four years in, you still remember the little things.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card reveal" data-card>
+          <div class="flip-inner">
+            <div class="flip-front"><svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6a5.4 5.4 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9Z"
+                  stroke="currentColor" stroke-width="1.6" />
+              </svg><span>tap to flip</span></div>
+            <div class="flip-back">
+              <p>Because "classmate" was only ever the first chapter.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card reveal" data-card>
+          <div class="flip-inner">
+            <div class="flip-front"><svg class="icon" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6a5.4 5.4 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9Z"
+                  stroke="currentColor" stroke-width="1.6" />
+              </svg><span>tap to flip</span></div>
+            <div class="flip-back">
+              <p>Because being near you has always just felt like home.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="s-scratch">
+      <p class="cards-heading reveal">scratch to reveal</p>
+      <div class="scratch-grid">
+        <div class="scratch-card reveal" data-scratch data-text="Cherished"></div>
+        <div class="scratch-card reveal" data-scratch data-text="My Person"></div>
+        <div class="scratch-card reveal" data-scratch data-text="Irreplaceable"></div>
+        <div class="scratch-card reveal" data-scratch data-text="Forever Grateful"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="s-final">
+      <div class="teaser reveal">
+        <svg class="teaser-icon" viewBox="0 0 48 48" fill="none">
+          <path d="M6 12h36v24H6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+          <path d="M6 13l18 15L42 13" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+        </svg>
+        <p class="eyebrow">one more thing</p>
+        <p class="teaser-text">there's a letter waiting for you</p>
+        <button class="read-more-btn" id="readMoreBtn">Click To Read More</button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ FINAL LETTER SCENE ============ -->
+  <div class="scene hidden" id="scene-finalletter">
+    <div class="final-letter">
+      <p>Alishba,</p>
+      <p>If I had to explain our friendship to someone who's never met you, I don't think I could do it in a few lines.
+        I'd have to tell them about the cup you gave me, and how it's still exactly where I put it four years ago. I'd
+        have to tell them about the jokes that only make sense if you were there — and how, somehow, you always were.
+      </p>
+      <p>We started as classmates. I don't think either of us expected that to turn into this — into someone I trust
+        with the unfiltered version of my day, into a laugh I can recognize from across a room, into four years that
+        never once felt like distance, even on the days we barely spoke.</p>
+      <p>Friendship Day is a strange thing to celebrate, honestly — a little like celebrating the sun coming up. You've
+        just always been there. But maybe that's exactly why it deserves a day of its own: the things we never have to
+        think twice about are usually the ones most worth being grateful for.</p>
+      <p>So thank you — for the cup, for the jokes, for every ordinary Tuesday you made unforgettable without even
+        trying. Here's to four years, and to however many more we get.</p>
+      <p class="final-sign">With everything, Nehal 🤍</p>
+    </div>
+  </div>
+
+</body>
+<script src="script.js"></script>
+</html>
